@@ -11,7 +11,22 @@
 			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
     <mvc:annotation-driven/>
+
+    <mvc:resources location="pdfs" mapping="/pdfs/**"/>
+
     <context:component-scan base-package="org.pluralsight.controllers"/>
+
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+              p:paramName="Language" />
+    </mvc:interceptors>
+
+    <bean id="LocaleResolver"
+          class="org.springframework.web.servlet.i18n.SessionLocaleResolver" p:defaultLocale="en" />
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource"
+          p:basename="messages"></bean>
 <!--
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -19,5 +34,6 @@
     </bean>
     -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+          p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" p:order="1" />
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
 </beans>
