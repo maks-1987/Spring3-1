@@ -20,6 +20,10 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
     <servlet-name>DispatcherServlet</servlet-name>
     <url-pattern>/pdfs/**</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <url-pattern>*.json</url-pattern>
+  </servlet-mapping>
 
 
 
