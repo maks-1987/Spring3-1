@@ -25,7 +25,5 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
     <url-pattern>*.json</url-pattern>
   </servlet-mapping>
 
-
-
   <display-name>Archetype Created Web Application</display-name>
 </web-app>
